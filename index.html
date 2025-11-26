@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bunmi Laska!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #ffafbd, #ffc3a0);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .birthday-person {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid #ff6b6b;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s forwards 0.5s;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .birthday-person h2 {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.5s forwards 1s;
+        }
+
+        .birthday-person p {
+            font-size: 1.2rem;
+            color: #777;
+            font-style: italic;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.5s forwards 1.5s;
+        }
+
+        .message {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.5s forwards 2s;
+        }
+
+        .message p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .message .highlight {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.5s forwards 2.5s;
+        }
+
+        .hashtag {
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .decoration {
+            position: absolute;
+            font-size: 2rem;
+            color: #ff6b6b;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .decoration:nth-child(1) { top: 10%; left: 5%; animation: float 8s infinite; }
+        .decoration:nth-child(2) { top: 15%; right: 7%; animation: float 10s infinite; }
+        .decoration:nth-child(3) { bottom: 20%; left: 8%; animation: float 12s infinite; }
+        .decoration:nth-child(4) { bottom: 10%; right: 5%; animation: float 9s infinite; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: #ff6b6b;
+            opacity: 0;
+            z-index: 1000;
+            animation: confettiFall 5s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+            opacity: 0;
+            animation: fadeIn 2s forwards 3s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .birthday-person h2 { font-size: 2rem; }
+            .message { padding: 20px; }
+            .image-container { width: 200px; height: 200px; }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 2rem; }
+            .birthday-person h2 { font-size: 1.8rem; }
+            .message p { font-size: 1rem; }
+            .image-container { width: 180px; height: 180px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Happy Birthday!</h1>
+            <p>Today is a special day for a special person</p>
+        </div>
+
+        <div class="birthday-person">
+            <div class="image-container">
+                <!-- Replace with actual image of Bunmi -->
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Bunmi Laska">
+            </div>
+            <h2>Bunmi Laska</h2>
+            <p>Olivet 82/87 Set</p>
+        </div>
+
+        <div class="message">
+            <p>Dear <span class="highlight">'Bunmi Laska'</span> as fondly called in our secondary school days,</p>
+            
+            <p>Happy birthday to my incredible good friend, <span class="highlight">Bunmi 'Ijongbon ko shee nikan fa'</span> 🤣🤣, many times she has fronted fights on my behalf whenever our other classmates wanted to intimidate me, but she will later run o🤣🤣. She is now a vessel in the Vineyard of God.</p>
+            
+            <p>You're more than just a friend to me. You're a sister, a confidant, a partner and a constant source of love. Your kindness, generosity and empathy inspires me everyday.</p>
+            
+            <p>I am so grateful for the laughter, adventures and the memories we shared together right from our childhood days in <span class="highlight">Olivet 82/87 set</span>.</p>
+            
+            <p>Cheers to many more years of good friendship, growth and making good unforgettable memories together. I love you more than words could say.</p>
+            
+            <p>Remain green and luxuriant all the days of your life. Happy birthday Dear, <span class="highlight">Bunmi ❤️</span>.</p>
+        </div>
+
+        <div class="hashtags">
+            <div class="hashtag">#mabelcarefoundation</div>
+            <div class="hashtag">#victoriaadebolanleglobalcare</div>
+            <div class="hashtag">#we_are_mabel_care_family</div>
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️ for Bunmi's Special Day</p>
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="decoration">🎂</div>
+        <div class="decoration">🎉</div>
+        <div class="decoration">🎈</div>
+        <div class="decoration">🥳</div>
+    </div>
+
+    <script>
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#ff8e8e', '#ffafbd', '#ffc3a0', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation completes
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+        // Create initial confetti
+        createConfetti();
+        
+        // Create confetti every 3 seconds
+        setInterval(createConfetti, 3000);
+
+        // Add interactive effect when clicking on the page
+        document.addEventListener('click', function(e) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'fixed';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.fontSize = '2rem';
+            heart.style.pointerEvents = 'none';
+            heart.style.animation = 'float 3s ease-out forwards';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+      </html>
